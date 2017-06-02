@@ -1,9 +1,10 @@
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Hanna</title>
     <link rel="stylesheet" href="static/css/bootstrap.css">
     <link rel="stylesheet" href="/static/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/css/main.css">
@@ -22,10 +23,10 @@
         <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="#">Домой</a></li>
-          <li><a href="#">Про нас</a></li>
-          <li><a href="#">Сервсиы</a></li>
-          <li><a href="#">Работы</a></li>
-          <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+          <li><a href="#des">Работы</a></li>
+          <li><a href="#ostdan">Обратная связь</a></li>
+          <li><a href="#partner">Партнеры</a></li>
+          <li><a href="#ostdan"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
         </ul>
       </div>
     </div>
@@ -40,7 +41,7 @@
       </div>
     </div>
   </div>
-    <div class="container w">
+    <div class="container w" >
     <div class="row centered">
       <br><br>
       <div class="col-lg-4">
@@ -64,7 +65,7 @@
     <div id="dg">
     <div class="container">
       <div class="row centered">
-        <h4>Последние работы</h4>
+          <a name="des"><h4>Последние работы</h4></a>
         <br>
         <div class="col-lg-4">
           <div class="tilt">
@@ -98,10 +99,24 @@
       </div>
     </div>
   </div>
+    <div id="hope">
+    <div class="container">
+        <div class="row centered">
+            <div class="col-md-6 col-sm-3 col-md-offset-3">
+                <a name="ostdan"><h3>Оставьте свои данные и наши менеджеры обязательно свяжутся с Вами</h3></a>
+            <form  class="form-horizontal op" action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input class="btn btn-primary" type="submit" value="Submit">
+
+            </form>
+        </div>
+        </div>
+    </div>
     <div id="lg">
     <div class="container">
       <div class="row centered">
-        <h4>Партнеры</h4>
+          <a name="partner"><h4>Партнеры</h4></a>
         <div class="col-lg-2 col-lg-offset-1">
           <img src="static/img/c01.gif" alt="">
         </div>

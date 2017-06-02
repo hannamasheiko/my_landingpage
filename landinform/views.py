@@ -2,6 +2,8 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render
+from  django import http
+
 
 from .forms import SignUpForm
 
@@ -12,8 +14,8 @@ def home(request):
     context = {
         'title': title,
         'form': form,
-    }
 
+    }
     if form.is_valid():
         instance = form.save(commit=False)
         full_name =  form.cleaned_data.get('full_name')
@@ -24,15 +26,15 @@ def home(request):
         subject = "Some sub"
         message = "Thank you for order"
         from_email = settings.EMAIL_HOST_USER
-       # to_email = 'annatestit@gmail.com'
+        to_email = instance.email
 
         send_mail(subject, message, from_email,
-                  ['hannamasheiko@gmail.com'], fail_silently=True)
+                  [to_email], fail_silently=True)
        # if not instance.full_name:
          #   instance.full_name = "Anonim"
         instance.save()
-        context = {
-            'title': "Thank you"
-        }
+        instance.clean()
+        return http.HttpResponseRedirect('')
+
 
     return render(request, "landinform/index.html", context)

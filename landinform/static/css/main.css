@@ -27,14 +27,34 @@ p{
 
     text-align: center;
 }
+#hope {
+   background: #e0e0e0;
+    padding-top: 10px;
+    padding-bottom: 70px;
+    text-align: center;
+
+
+}
+#hope h4{
+    color:white;
+    font-size: 45px ;
+    padding-top: 0px;
+
+}
 a{
     color: #f85c37;
+
 }
 
 a:hover, a:focus{
     color: #7b7b7b;
     text-decoration: none;
     outline:0;
+}
+a:target{
+    display:block;
+    margin-top:-80px;
+    padding-top:80px;
 }
 
 hr{
@@ -146,14 +166,13 @@ hr{
 
 #lg h4 {
     tab-size: 45px;
+    color: black;
 }
-
-#r{
+#r {
     background: #ff7878;
     padding-top: 70px;
     padding-bottom: 70px;
 }
-
 #r h4{
     color:white;
     font-size: 45px ;
@@ -174,4 +193,8 @@ hr{
 }
 #f i:hover{
     color: #ff7878 ;
+}
+.op{
+    margin-bottom: 20px;
+
 }
